@@ -13,7 +13,7 @@ gradle init --type java-application --dsl kotlin
 During the interactive Gradle initialization script, I select:
 - Project name: `Smart_Utilities`
 - Java version: 18
-- Test framework: JUnit Platform
+- Test framework: `JUnit Jupiter`
 - Other options (which I can't remember)
 
 After that, I use scripts to customize the repository:

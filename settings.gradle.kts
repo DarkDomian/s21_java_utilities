@@ -11,6 +11,6 @@ plugins {
 }
 
 rootProject.name = "Smart_Utilities"
-include("exercise1","exercise2","exercise3","exercise4","exercise5","exercise6",
-"exercise7","exercise8","exercise9","exercise10",)
+
+include("exercise1","exercise2","exercise3","exercise4","exercise5","exercise6","exercise7","exercise8","exercise9","exercise10",)
 
