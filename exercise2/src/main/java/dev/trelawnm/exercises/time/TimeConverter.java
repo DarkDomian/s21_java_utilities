@@ -8,11 +8,8 @@ public class TimeConverter {
         while (true) {
             try {
                 String s = scanner.next();
-                int num = Integer.parseInt(s);
-                if (num < 0)
-                    throw new NumberFormatException("Time can't be less than 0!");
 
-                return num;
+                return Integer.parseUnsignedInt(s);
             } catch (NumberFormatException e) {
                 System.out.println("Incorrect time");
             }
@@ -33,7 +30,6 @@ public class TimeConverter {
         System.out.printf("%02d:%02d:%02d", hours, minutes, seconds);
     }
 
-    // 4. Главный метод – связывает всё вместе
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             int total = inputTotalSeconds(scanner);
