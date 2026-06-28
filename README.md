@@ -29,3 +29,36 @@ Smart Utilities is a first project of Java bootcamp into 21 School curiclium.
 **String Filtering** ([exercise 9](exercise9)) - Filters strings containing a given substring.
 
 **Names of Adult Users** ([exercise 10](exercise10)) - Filters users by age (≥18) using Stream API.
+
+## Gradle Multi-module Cheat Sheet
+
+**Project structure:** root project `Smart_Utilities` with subprojects `exercise1` . . . `exercise10`.
+Run all commands from the **project root** directory.
+
+
+> [!TIP]
+> For building on Windows, just replace `./gradlew` with `gradlew.bat`.
+
+All available tasks can be observed by running `./gradlew tasks`, for any further information pass `--help` to the command you are interested in.
+
+Most commonly used patterns:
+```bash
+# All modules
+./gradlew build
+./gradlew test
+./gradlew clean
+
+# Single module (change exercise3 to the chosen one)
+./gradlew :exercise3:build
+./gradlew :exercise3:test
+./gradlew :exercise3:clean
+./gradlew :exercise3:run           # run the main class of this module
+
+# Single test class in a single module
+./gradlew :exercise4:test --tests "full.package.path.and.Class"
+```
+
+> [!TIP]
+> - For skipping tests just add `-x test` to the prompt. `-x` means `--exclude-task`.
+> - The colon `:` before the module name is *mandatory* for subproject paths.
+> - For running a single test class, add it to the `test` task using `--tests "<full class name (package + class)>"`, for example `--tests "dev.trelawnm.exercises.triangle.TrianglePerimeterTest"`

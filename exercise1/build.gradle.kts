@@ -41,3 +41,15 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.jar {
+    manifest {
+        // specify manifest for run .jar file with `java -jar`
+        attributes["Main-Class"] = application.mainClass.get()
+    }
+}
+
+tasks.run {
+    // define standart input for program
+    standardInput = System.`in`
+}
