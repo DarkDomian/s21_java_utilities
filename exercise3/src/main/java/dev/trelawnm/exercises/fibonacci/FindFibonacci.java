@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 public class FindFibonacci {
 
-    public static int inputTotalSeconds() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static int inputFibonacciOrder(Scanner sc) {
         while (true) {
             try {
-                String s = scanner.next();
+                String s = sc.next();
 
                 return Integer.parseUnsignedInt(s);
             } catch (NumberFormatException e) {
@@ -18,16 +16,40 @@ public class FindFibonacci {
         }
     }
 
-    // naive method. will brake down the PC tring rich the something throwable
-    // should be replaced with O(log n) algrorithm using fast doubling
     public static long countFibonacci(int num) {
-        if (num == 0) {
-            return 0L;
-        } else if (num == 1) {
-            return 1L;
+        long v[] = new long[2];
+        FastDoubling(num, v);
+        return v[0];
+    }
+
+    public static void FastDoubling(int n, long []v) {
+        long a, b, c, d;
+
+        if (n == 0) {
+            v[0] = 0;
+            v[1] = 1;
+            return;
         }
 
-        return Math.addExact(countFibonacci(num - 1), countFibonacci(num - 2));
+        FastDoubling((n / 2), v);
+
+        a = v[0]; // F(n)
+        b = v[1]; // F(n+1)
+
+        // F(2n) = Fn[2F(n+1)-F(n)]
+        c = Math.multiplyExact(a, Math.multiplyExact(2, b) - a);
+
+        // F(2n+1) = F^2(n+1) + F^2(n)
+        d = Math.addExact(Math.multiplyExact(a, a), Math.multiplyExact(b, b));
+
+        // Check if n is odd or evens
+        if (n % 2 == 0 ) {
+            v[0] = c;           // F(k) = F(2n)
+            v[1] = d;           // F(k+1) = F(2n+1)
+        } else {
+            v[0] = d;           // F(k+1) = F(2n+1)
+            v[1] = d + c;       // F(k+2) = F(2n+1) + F(2n), from the recurrent definition
+        }
     }
 
     public static void printFibonacci(long fib) {
@@ -35,14 +57,13 @@ public class FindFibonacci {
     }
 
     public static void main(String[] args) {
-
-        int total = inputTotalSeconds();
-        // System.out.printf("%s", Long.toUnsignedString(countFibonacci(total)));
+        Scanner sc = new Scanner(System.in);
+        int total = inputFibonacciOrder(sc);
         try {
             long fib = countFibonacci(total);
             printFibonacci(fib);
-        } catch (Throwable e) {
-            System.out.printf(e.getMessage());
+        } catch (Exception e) {
+            System.out.printf("Too large n");
         }
     }
 }
