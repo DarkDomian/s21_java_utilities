@@ -44,7 +44,8 @@ public class MatchFirstAndLast {
         } else {
             for (int i = 0; i < length; i++) {
                 System.out.print(numbers[i]);
-                System.out.print(" ");
+                if (i != length - 1)
+                    System.out.print(" ");
             }
             System.out.println();
         }
