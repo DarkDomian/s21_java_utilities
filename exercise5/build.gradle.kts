@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.matching.MatchFirstAndLast"
+    mainClass = "dev.trelawnm.exercises.MatchFirstAndLast"
 }
 
 tasks.named<Test>("test") {
