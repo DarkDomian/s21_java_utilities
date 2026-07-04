@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.negativemean.FindNMean"
+    mainClass = "dev.trelawnm.exercises.FindNMean"
 }
 
 tasks.named<Test>("test") {

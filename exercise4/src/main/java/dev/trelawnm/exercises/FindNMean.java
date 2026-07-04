@@ -1,4 +1,4 @@
-package dev.trelawnm.exercises.negativemean;
+package dev.trelawnm.exercises;
 
 import java.util.Scanner;
 
