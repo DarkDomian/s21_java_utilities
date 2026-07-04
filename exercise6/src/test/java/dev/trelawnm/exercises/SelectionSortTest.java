@@ -1,4 +1,4 @@
-package dev.trelawnm.exercises.sort;
+package dev.trelawnm.exercises;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

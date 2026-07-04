@@ -27,7 +27,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.sort.SelectionSort"
+    mainClass = "dev.trelawnm.exercises.SelectionSort"
 }
 
 tasks.named<Test>("test") {
