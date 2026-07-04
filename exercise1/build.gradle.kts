@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.triangle.TrianglePerimeter"
+    mainClass = "dev.trelawnm.exercises.TrianglePerimeter"
 }
 
 tasks.named<Test>("test") {
