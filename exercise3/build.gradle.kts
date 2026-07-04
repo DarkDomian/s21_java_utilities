@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.fibonacci.FindFibonacci"
+    mainClass = "dev.trelawnm.exercises.FindFibonacci"
 }
 
 tasks.named<Test>("test") {
