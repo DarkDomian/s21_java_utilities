@@ -1,4 +1,4 @@
-package dev.trelawnm.exercises.time;
+package dev.trelawnm.exercises;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

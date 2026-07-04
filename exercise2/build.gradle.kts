@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "dev.trelawnm.exercises.time.TimeConverter"
+    mainClass = "dev.trelawnm.exercises.TimeConverter"
 }
 
 tasks.named<Test>("test") {
