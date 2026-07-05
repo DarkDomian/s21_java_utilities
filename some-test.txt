@@ -1,0 +1,12 @@
+Reusing configuration cache.
+> Task :exercise10:processResources NO-SOURCE
+> Task :exercise10:compileJava UP-TO-DATE
+> Task :exercise10:classes UP-TO-DATE
+
+> Task :exercise10:run
+Incorrect input. Age <= 0
+Name2, Name4
+
+BUILD SUCCESSFUL in 8s
+2 actionable tasks: 1 executed, 1 up-to-date
+Configuration cache entry reused.
