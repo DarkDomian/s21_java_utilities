@@ -20,15 +20,15 @@ public class MatchFirstAndLast {
         if (num >= 0 && num < 10) return true;
 
         // find number of digits in number
-        int n = (int) Math.log10(num) + 1;
-        int first = num / (int) Math.pow(10, n - 1);
+        int count = 0;
+        while (num / (int) Math.pow(10, count) > 0) count++;
+        int first = num / (int) Math.pow(10, count - 1);
         int last = num % 10;
 
         return first == last;
     }
 
     private static int readNumbers(int numbers[], Scanner sc, int n) {
-        // int[] numbers = new int[n];
         int count = 0;
         for (int i = 0; i < n; i++) {
             int tmp = readInteger(sc);
